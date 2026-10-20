@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "skills": {
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "a5d2a6d7613d5f6665997cca26d5a3472c46a39857dd34ba3329212945da0dc7"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
+    },
+    "frontend-design-ui-ux": {
+      "source": "ulpi-io/skills",
+      "sourceType": "github",
+      "skillPath": "frontend-design-ui-ux/SKILL.md",
+      "computedHash": "8eae75d294447eac5fab6c8a31141d8ff74777ea1b7bc25aef93c93ed6e10e71"
+    },
+    "landing-page-design": {
+      "source": "skill-zero/s",
+      "sourceType": "github",
+      "skillPath": "guides/design/landing-page-design/SKILL.md",
+      "computedHash": "435af3919183e91ded83197f9238740593cac886f45067dc729d8a7095fbfb5a"
+    },
+    "mobile-design": {
+      "source": "RubenGlez/mobile-design",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "1e80f88915cf93d24b3c71c3f91b5901a2c42f66a23c4e5df9b08b3f2659c135"
+    },
+    "superdesign": {
+      "source": "superdesigndev/superdesign-skill",
+      "sourceType": "github",
+      "skillPath": "skills/superdesign/SKILL.md",
+      "computedHash": "e98daea73371b2cdcc333025a993f6b0c2781c692382a9dcf132c7094a014fdf"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "27b1e8c953e26f962e3314281601959b04787edf3fd7fccadce176ff844c688d"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a"
+    }
+  }
+}

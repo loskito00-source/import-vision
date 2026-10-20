@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f7fafc;
+  --color-mist: #e8f0f6;
+  --color-line: #d5e0ea;
+  --color-ink: #0a1f3d;
+  --color-muted: #4f6079;
+  --color-navy: #00306c;
+  --color-navy-deep: #002257;
+  --color-blue: #005484;
+  --color-teal: #006f86;
+  --color-teal-bright: #00849c;
+  --color-cyan: #7fd8e6;
+  --color-haze: #b8c9dd;
+
+  --font-display: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-atkinson), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-lens: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-teal-bright);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.on-navy :focus-visible {
+  outline-color: var(--color-cyan);
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-navy-deep);
+}
+
+/* Scrollbar de marca: pulgar navy que se vuelve teal al pasar el cursor, sobre pista clara */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--color-navy) var(--color-mist);
+    scrollbar-width: thin;
+  }
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-mist);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border: 3px solid var(--color-mist);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-teal);
+}
+/* En los paneles oscuros (menú móvil) la pista se funde con el fondo */
+.on-navy ::-webkit-scrollbar-track {
+  background: var(--color-navy-deep);
+}
+.on-navy ::-webkit-scrollbar-thumb {
+  background: rgb(127 216 230 / 0.5);
+  border-color: var(--color-navy-deep);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Retícula fina tipo instrumento, usada como textura en bloques navy */
+.reticle-bg {
+  background-image:
+    linear-gradient(to right, rgb(127 216 230 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(127 216 230 / 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Reflejo de lente: una franja de luz que cruza la tarjeta al pasar el cursor (solo transform) */
+.lens-sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.lens-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -50% auto -50% -60%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.55), transparent);
+  transform: translateX(-120%) skewX(-12deg);
+  pointer-events: none;
+  z-index: 1;
+}
+@media (hover: hover) {
+  .lens-sheen:hover::after {
+    transform: translateX(420%) skewX(-12deg);
+    transition: transform 900ms var(--ease-lens);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
